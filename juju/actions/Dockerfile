@@ -16,17 +16,17 @@ ENV GOROOT=/usr/lib/go
 ENV JUJU_DEV_FEATURE_FLAGS=action
 
 ADD setup.sh /
-ADD lxc.sh /
+# ADD lxc.sh /
 
-# ADD juju.sh /
+ADD juju.sh /
 ADD run.sh /
 
 RUN /setup.sh
 
 RUN mkdir /home/ubuntu/.juju
-RUN mkdir -p /home/ubuntu/go
+RUN mkdir -p /home/ubuntu/.go
 
-RUN /lxc.sh
+# RUN /lxc.sh
 
-# RUN /juju.sh
+RUN /juju.sh
 CMD /run.sh
