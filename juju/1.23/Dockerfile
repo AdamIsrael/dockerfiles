@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 ENV HOME=/home/ubuntu
 ENV GOPATH=/home/ubuntu/go
 ENV GOROOT=/usr/lib/go
-# ENV JUJU_DEV_FEATURE_FLAGS=action
+ENV JUJU_DEV_FEATURE_FLAGS=action
 
 ADD setup.sh /
 # ADD lxc.sh /
