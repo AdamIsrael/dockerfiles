@@ -10,11 +10,11 @@ This Docker image contains the 1.23-beta2 release of Juju, giving users a way to
 
 By default, the first time the image is run it will run juju-quickstart, to guide you through setting up your environment.
 
-    docker run -ti adamisrael/juju-1.23 -v $HOME/.juju-1.23:/home/ubuntu/.juju
+    docker run -ti -v $HOME/.juju-1.23:/home/ubuntu/.juju adamisrael/juju-1.23
 
 If you want to use the juju environment from your host machine:
 
-    docker run -ti adamisrael/juju-1.23 -v $HOME/.juju:/home/ubuntu/.juju
+    docker run -ti -v $HOME/.juju:/home/ubuntu/.juju adamisrael/juju-1.23
 
 ### Caveats
 
