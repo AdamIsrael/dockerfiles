@@ -19,10 +19,10 @@ go get launchpad.net/godeps/...
 mkdir -p $HOME/.go/src/github.com/juju/
 git clone https://github.com/juju/juju $HOME/.go/src/github.com/juju/juju
 cd $HOME/.go/src/github.com/juju/juju
-git checkout 1.23
 
 # Build!
 JUJU_MAKE_GODEPS=true make godeps
 make build
+make install
 
 echo "export PATH=${HOME}/.go/bin:$PATH:${HOME}/.juju-plugins" >> $RC

@@ -1,6 +1,6 @@
 # Juju Actions
 
-This Docker image builds the 1.23 branch of Juju, giving users a way to preview the new features, such as `actions` and `leader election`  before it's available in a stable release.
+This Docker image builds the latest development version of Juju, giving users a way to preview the new features before they're available in a stable release.
 
 ## Building
 
@@ -10,11 +10,11 @@ This Docker image builds the 1.23 branch of Juju, giving users a way to preview 
 
 By default, the first time the image is run it will run juju-quickstart, to guide you through setting up your environment.
 
-    docker run -ti adamisrael/juju-1.23 -v $HOME/.juju-1.23:/home/ubuntu/.juju
+    docker run -ti -v $HOME/.juju-trunk:/home/ubuntu/.juju adamisrael/juju-trunk
 
 If you want to use the juju environment from your host machine:
 
-    docker run -ti adamisrael/juju-1.23 -v $HOME/.juju:/home/ubuntu/.juju
+    docker run -ti -v $HOME/.juju:/home/ubuntu/.juju adamisrael/juju-trunk
 
 ### Caveats
 
