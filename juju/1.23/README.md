@@ -1,6 +1,6 @@
-# Juju 1.23 pre-release
+# Juju 1.23-beta2
 
-This Docker image builds the 1.23 branch of Juju, giving users a way to preview the new features, such as `actions` and `leader election`  before it's available in a stable release.
+This Docker image contains the 1.23-beta2 release of Juju, giving users a way to preview the new features, such as `actions` and `leader election`  before it's available in a stable release.
 
 ## Building
 
