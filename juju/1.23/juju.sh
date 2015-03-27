@@ -20,10 +20,8 @@ mkdir -p $HOME/.go/src/github.com/juju/
 git clone https://github.com/juju/juju $HOME/.go/src/github.com/juju/juju
 cd $HOME/.go/src/github.com/juju/juju
 git checkout 1.23
-# go build
 
 # Build!
-# cd $HOME/.go/src/github.com/juju/juju
 JUJU_MAKE_GODEPS=true make godeps
 make build
 

@@ -1,12 +1,26 @@
 # Juju Actions
 
-This Docker image builds the 1.23 branch of Juju, giving users a way to preview the new `action` feature before it's available in a stable release.
+This Docker image builds the 1.23 branch of Juju, giving users a way to preview the new features, such as `actions` and `leader election`  before it's available in a stable release.
 
 ## Building
-make build
+
+    make build
 
 ## Running
-docker run -ti adamisrael/juju-actions ./
+
+By default, the first time the image is run it will run juju-quickstart, to guide you through setting up your environment.
+
+    docker run -ti adamisrael/juju-1.23 -v $HOME/.juju-1.23:/home/ubuntu/.juju
+
+If you want to use the juju environment from your host machine:
+
+    docker run -ti adamisrael/juju-1.23 -v $HOME/.juju:/home/ubuntu/.juju
+
+### Caveats
+
+The local provider is not currently functional. If prompted by quickstart, choose any other provider.
 
 ## TODO
-- Create Makefile to build, test, and upload image
+- Add test, upload to Makefile
+- Build as a nightly, until 1.23 final is released
+- Local provider

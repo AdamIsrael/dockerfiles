@@ -13,19 +13,25 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 ENV HOME=/home/ubuntu
 ENV GOPATH=/home/ubuntu/go
 ENV GOROOT=/usr/lib/go
-ENV JUJU_DEV_FEATURE_FLAGS=action
+# ENV JUJU_DEV_FEATURE_FLAGS=action
 
+# Setup the user
 ADD setup.sh /
-# ADD lxc.sh /
+RUN /setup.sh
+
+# Setup directories
+RUN mkdir -p /home/ubuntu/.juju
+RUN mkdir -p /home/ubuntu/.go
+
+# Make ~.juju persistent
+# This will need a local directory, mapped to via docker run
+VOLUME ["/home/ubuntu/.juju"]
 
 ADD juju.sh /
 ADD run.sh /
 
-RUN /setup.sh
-
-RUN mkdir /home/ubuntu/.juju
-RUN mkdir -p /home/ubuntu/.go
-
+# Disable lxc until it's functional
+# ADD lxc.sh /
 # RUN /lxc.sh
 
 RUN /juju.sh

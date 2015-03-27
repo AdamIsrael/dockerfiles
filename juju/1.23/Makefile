@@ -6,7 +6,7 @@ default:
 	@echo
 
 run:
-	docker run -ti jujubox
+	docker run -ti juju-1.23
 
 build:
-	docker build -t jujubox ./
+	docker build -t juju-1.23 ./
