@@ -1,4 +1,4 @@
-# Juju Actions
+# Juju 1.23 pre-release
 
 This Docker image builds the 1.23 branch of Juju, giving users a way to preview the new features, such as `actions` and `leader election`  before it's available in a stable release.
 
@@ -24,3 +24,4 @@ The local provider is not currently functional. If prompted by quickstart, choos
 - Add test, upload to Makefile
 - Build as a nightly, until 1.23 final is released
 - Local provider
+- Optimize the build process
